@@ -7,7 +7,7 @@ $select_query = "SELECT * FROM book ORDER by date";
 $result = mysqli_query($conn, $select_query);
 $book = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-//print_r($food_details);
+//print_r($book_details);
 
 //end of connection
 mysqli_close($conn); 
