@@ -31,9 +31,9 @@
 </head>
 <body>
 <header>
-      <nav class="nav-wrapper transparent">
+      <nav class="nav-wrapper transparent z-depth-0">
         <div class="container">
-          <a href="#" class="brand-logo">
+          <a href="#" class="brand-logo" z-depth-4>
             <img src="image/logo-via-logohub (2).png" alt="Sparky logo" width="300px" height="50px">
           </a>
           <a href="" class="sidenav-trigger" data-target="mobile-menu">
