@@ -15,31 +15,20 @@ mysqli_close($conn);
 
 ?>
 <section>
-    <div class="container">
-        <div class="row">
-            <?php foreach($book as $book_item){ ?>
-            <div class="col s12 m12 l6">
-            <div class="card">
-                    <div class="card-image">
-                       <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
-                    </div>
-                    <div class="card-content">
-                        <p><?php echo $book_item["title"];?></p>
-                        <p>
-                        <ul>
-                        <li>345 pages</li>
-                        <li>2009</li>
-                        <li>2.87mb</li>
-                    </ul>
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="food.php?id=<?php echo $food_item['id'] ?>">Read more</a>
-                    </div>
+    <div class="row">
+        <?php foreach($book as $book_item){ ?>
+        <div class="col s12 l6">
+            <div class="row">
+                <div class="col s12 l4">
+                    <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
+                </div>
+                <div class="col s12 l8">
+                    <h3><?php echo $book_item["title"];?></h3>
+                    <h4><?php echo $book_item["author"];?></h4> 
                 </div>
             </div>
-            <?php } ?>
         </div>
+        <?php } ?>
     </div>
 </section>
 
@@ -49,3 +38,21 @@ include('include/footer.php');
 
 ?>
 
+<!--
+   <div class="card">
+                <div class="card-image">
+                    <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
+                </div>
+                <div class="card-content">
+                    <p><?php echo $book_item["title"];?></p>
+                    <p><?php echo $book_item["author"];?></p>
+                </div>
+                <div class="card-action">
+                    <a href="food.php?id=<?php echo $food_item['id'] ?>">Read more</a>
+                </div>
+                </div>
+            </div> 
+            -->                 
+                    
+                    
+                

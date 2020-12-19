@@ -21,8 +21,9 @@
         background-position: center;
         min-height: 1000px;
       }
-      nav {
-        border
+      section{
+          padding-top: 4vw;
+          padding-bottom: 4vw;
       }
       .search {
         margin-top: 300px;
