@@ -14,17 +14,21 @@ $book = mysqli_fetch_aLL($result, MYSQLI_ASSOC);
 mysqli_close($conn); 
 
 ?>
-<section>
+
+<section class="books">
+<div class="container note" style="background-color:#fafafa;">
+    <h4>Sparky Library is a haven for books, eBooks for you to download for free. No annoying ads, no download limits, enjoy!</h4>
+</div>
     <div class="row">
         <?php foreach($book as $book_item){ ?>
-        <div class="col s12 l6">
+        <div class="col s12 l6 details">
             <div class="row">
                 <div class="col s12 l4">
                     <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
                 </div>
                 <div class="col s12 l8">
-                    <h3><?php echo $book_item["title"];?></h3>
-                    <h4><?php echo $book_item["author"];?></h4> 
+                    <h4><?php echo $book_item["title"];?></h4>
+                    <h5><?php echo $book_item["author"];?></h5> 
                 </div>
             </div>
         </div>
@@ -36,23 +40,6 @@ mysqli_close($conn);
 <?php
 include('include/footer.php');
 
-?>
-
-<!--
-   <div class="card">
-                <div class="card-image">
-                    <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
-                </div>
-                <div class="card-content">
-                    <p><?php echo $book_item["title"];?></p>
-                    <p><?php echo $book_item["author"];?></p>
-                </div>
-                <div class="card-action">
-                    <a href="food.php?id=<?php echo $food_item['id'] ?>">Read more</a>
-                </div>
-                </div>
-            </div> 
-            -->                 
-                    
+?>     
                     
                 
