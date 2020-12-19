@@ -21,12 +21,25 @@
         background-position: center;
         min-height: 1000px;
       }
+      .note{
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 30px;
+      }
       section{
-          padding-top: 4vw;
+          padding-top: 2vw;
           padding-bottom: 4vw;
       }
       .search {
         margin-top: 300px;
+      }
+      .books{
+        background-color: #f5f5f5;
+      }
+      .details{
+        background-color: #fafafa;
+        margin-bottom: 20px;
+      
       }
     </style>
 </head>
