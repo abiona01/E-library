@@ -74,6 +74,7 @@
           <button type ="submit" class="right transparent"><i class="material-icons">search</i></button>
         </div>
       </form>
+      <p></p>
       </div>
     </header>
       <!-- Compiled and minified JavaScript -->
