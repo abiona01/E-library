@@ -4,7 +4,7 @@ include('include/config.php');
 
 
 //get book table data from db;
-$select_query = "SELECT * FROM book ORDER by date";
+$select_query = "SELECT * FROM book ORDER by date ASC limit 6";
 $result = mysqli_query($conn, $select_query);
 $book = mysqli_fetch_aLL($result, MYSQLI_ASSOC);
 
@@ -24,7 +24,8 @@ mysqli_close($conn);
         <div class="col s12 l6 details">
             <div class="row">
                 <div class="col s12 l4">
-                    <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px">
+                    <a href="<?php echo $book_item["link"];?>">
+                    <img src="image/<?php echo $book_item["image"]; ?> " width="250px" height="250px"> </a>
                 </div>
                 <div class="col s12 l8">
                     <h4><?php echo $book_item["title"];?></h4>

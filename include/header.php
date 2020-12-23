@@ -54,16 +54,16 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">All Books</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="all.php">All Books</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
           </ul>
           <ul class="sidenav white" id="mobile-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">All Books</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="all.php">All Books</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
           </ul>
         </div>
       </nav>
@@ -74,6 +74,7 @@
           <button type ="submit" class="right transparent"><i class="material-icons">search</i></button>
         </div>
       </form>
+      <p></p>
       </div>
     </header>
       <!-- Compiled and minified JavaScript -->
