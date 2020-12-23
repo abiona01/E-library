@@ -55,13 +55,13 @@
           </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">All Books</a></li>
+            <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="signup.php">Sign Up</a></li>
           </ul>
           <ul class="sidenav white" id="mobile-menu">
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">All Books</a></li>
+            <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="signup.php">Sign Up</a></li>
           </ul>

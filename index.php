@@ -4,7 +4,7 @@ include('include/config.php');
 
 
 //get book table data from db;
-$select_query = "SELECT * FROM book ORDER by date";
+$select_query = "SELECT * FROM book ORDER by date ASC limit 6";
 $result = mysqli_query($conn, $select_query);
 $book = mysqli_fetch_aLL($result, MYSQLI_ASSOC);
 
