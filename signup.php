@@ -1,3 +1,47 @@
+<?php include('include/connect.php'); ?>
+
+<?php
+if(isset($_POST['submit'])) {
+    $count = 0;
+    $sl = "SELECT username FROM users";
+    $result = mysqli_query($connect, $sl);
+
+    while($row = mysqli_fetch_assoc($result)) {
+        if($row['username']==$_POST['username']) {
+            $count=$count+1;
+        }
+    } 
+  
+    // $uName =  $_POST['username'];
+    // $email =  $_POST['email'];
+    
+    $uName = mysqli_real_escape_string($connect, $_POST['username']);
+    $email = mysqli_real_escape_string($connect, $_POST['email']);
+
+    
+
+    // $sql = "INSERT INTO `users` VALUES('$_POST[username]', '$_POST[email]')";
+    $sql = "INSERT INTO users(Username, email) VALUES('$uName', '$email')";
+    
+    if($count==0) {
+        mysqli_query($connect, $sql); 
+    }
+    ?>
+    <script>
+        alert('Registration Successful.');
+    </script>
+    <?php 
+}
+
+else { 
+    ?>
+    <script>
+        alert('The username already exists.');
+    </script>
+    <?php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +52,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container " style="width: 500px; background-color: white; margin-top: 8vh">
@@ -24,19 +68,19 @@
       <div class="row">
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix ">account_circle</i>
-          <input id="full_name" type="text" class="validate autocomplete" placeholder="Full name" required>
-          <label for="full_name">Full Name <span>*<span></label>
+          <input id="full_name" type="text" class="validate autocomplete" placeholder="Username" name="username" required>
+          <label for="full_name">Username<span>*<span></label>
         </div>
 
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix ">mail</i>
-          <input id="email" type="email" class="validate autocomplete" placeholder="Email" required>
+          <input id="email" type="email" class="validate autocomplete" placeholder="Email" name="email" required>
           <label for="email">Email <span>*<span></label>
         </div>
 
 
         <div class="input-field col s12 m12 l12 center" style="margin-top: 10vh; margin-bottom: 10vh">
-          <button type="submit" class="btn waves-effect black" id="sign-up"><a href="">Sign Up</a></button>
+        <input type="submit" class="btn info" name="submit">
           <p id="login">Already have an Account with Sparky Library? <a href="./login.php">Login Here</a><p>
         </div>
 
