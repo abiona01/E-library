@@ -16,7 +16,7 @@
     <title>Document</title>
     <style>
       header{
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(image/images7.jpg);
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(image/antique-books-on-shelves.jpg);
         background-size: cover;
         background-position: center;
         min-height: 1000px;
@@ -70,8 +70,8 @@
       <div class="container">
       <form action="">
         <div class="input-field search">
-          <input type="text" name="books" placeholder="Search books">
-          <button type ="submit" class="right transparent"><i class="material-icons">search</i></button>
+          <input id="data" type="text" name="books" placeholder="Search books">
+          <button id="submit-btn" type ="submit" class="right transparent"><i class="material-icons">search</i></button>
         </div>
       </form>
       <p></p>
@@ -86,5 +86,15 @@
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
+  $("#submit-btn").on("click",function(){
+    $value = $("#data").val();
+    $('#data').val('');
+  })
 });
+</script>
+
+<script type="text/javascript">
+  document.getElementById("submit-btn").addEventListener("click", function(){
+    window.location = document.getElementById('data').value;
+  });
 </script>
