@@ -5,5 +5,4 @@ if(!$conn){
     echo "connection error"; 
 }
 
-
 ?>

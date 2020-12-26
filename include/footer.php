@@ -1,6 +1,6 @@
 
 
-<footer class="page-footer blue-grey">
+<footer class="page-footer blue-grey darken-2">
         <section class="section container center-align" id="Let Me Know What You Feel">
             <div class="row">
                 <div>
@@ -21,7 +21,7 @@
                             <textarea id="message" name="materialize-textarea" cols="30" rows="10"></textarea>
                             <label for="your message" class="your message">What do you think</label>
                         </div>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light blue-grey darken-1" type="submit" name="action">Submit
                         </button>
                     </form>
                 </div>
