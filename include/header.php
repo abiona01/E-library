@@ -54,28 +54,30 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="signup.php">Sign Up</a></li>
+            <li><a href="box.php">Chat</a></li>
           </ul>
           <ul class="sidenav white" id="mobile-menu">
             <li><a href="index.php">Home</a></li>
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="signup.php">Sign Up</a></li>
+            <li><a href="box.php">Chat</a></li>
           </ul>
         </div>
       </nav>
       <div class="container">
-      <form action="">
-        <div class="input-field search">
-          <input id="data" type="text" name="books" placeholder="Search books">
-          <button id="submit-btn" type ="submit" class="right transparent"><i class="material-icons">search</i></button>
-        </div>
-      </form>
-      <p></p>
-      </div>
+        <form action="search.php" method="POST">
+          <div class="input-field search">
+            <input id="data" type="text" name="search" placeholder="Search books">
+            <!--<button id="submit-btn" type ="submit" class="right transparent"><i class="material-icons">search</i></button> -->
+            <input type="submit" name="submit" value="Search">
+          </div>
+        </form>
+    </div> 
     </header>
       <!-- Compiled and minified JavaScript -->
 

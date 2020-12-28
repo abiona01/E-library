@@ -24,7 +24,7 @@ include('include/config.php');
         $res_data = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_array($res_data)){ 
             //here goes the data ?>
-                <div class="row">
+                <div class="row white-text">
                     <div class="col s12 l6">
                         <i class="tiny material-icons prefix" style="top:10px">book</i>
                         <a href="<?php echo $row["link"];?>">
@@ -51,37 +51,3 @@ include('include/config.php');
 <?php
 include('include/footer.php');
 ?>
-<!--<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-         input, button{   
-            height: 34px;   
-        }   
-  
-    .pagination {   
-        display: inline-block;   
-    }   
-    .pagination a {   
-        font-weight:bold;   
-        font-size:18px;   
-        color: black;   
-        float: left;   
-        padding: 8px 16px;   
-        text-decoration: none;   
-        border:1px solid black;   
-    }   
-    .pagination a.active {   
-            background-color: pink;   
-    }   
-    .pagination a:hover:not(.active) {   
-        background-color: skyblue;   
-    }   
-    </style>
-</head>
-<body>
-    
-</body>
-</html> -->
