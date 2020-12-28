@@ -77,7 +77,7 @@
           <img src="./image/black.jpg" width="250px" height="250px">
         </div>
         <div class="card-content">
-          <p>Edhemuino Mary</p>
+          <p>gEdhemuino Mary</p>
         </div>
       </div>
     </div>
