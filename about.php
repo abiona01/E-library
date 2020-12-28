@@ -45,7 +45,7 @@
           <img src="./image/florence.jpg" width="250px" height="250px">
         </div>
         <div class="card-content">
-          <p>Hello I'm Florence Nneoma Asoegwu, new into the tech space, a full stack developer. I am also a writer and I love research.</p>
+          <p>Florence Nneoma Asoegwu, new into the tech space, a full stack developer. I am also a writer and I love research.</p>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
           <img src="./image/black.jpg" width="250px" height="250px">
         </div>
         <div class="card-content">
-          <p>Hi my name is Omono Faith</p>
+          <p>Omono Faith, Fullstack Developer</p>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
           <img src="./image/black.jpg" width="250px" height="250px">
         </div>
         <div class="card-content">
-          <p>Hello guys.. My name is Edhemuino Mary</p>
+          <p>gEdhemuino Mary</p>
         </div>
       </div>
     </div>
