@@ -17,7 +17,7 @@ mysqli_close($conn);
 
 <section class="books">
 <div class="container note" style="background-color:#fafafa;">
-    <h4>Sparky Library is a haven for books, eBooks for you to download for free. No annoying ads, no download limits, enjoy!</h4>
+    <p style="font-size: 15px;" class="grey-text text-darken-3">Sparky Library is a haven for books, eBooks for you to download for free. We have hundreds of books availabale for you to read, and we take requests!!!. So, if you can't find a book you want, fret not, just chat with us in the chat section. No annoying ads, no download limits, enjoy!</p>
 </div>
     <div class="row">
         <?php foreach($book as $book_item){ ?>

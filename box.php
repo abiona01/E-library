@@ -19,7 +19,7 @@
    <div class="wrapper">
        <div class="nav">
        <div class="title">Chat with us 
-        <a href="index.php" ><button  style="position: relative; right:-70px";>Home</button></a></li>
+        <a href="index.php" ><button class="btn right" >Home</button></a></li>
        </div>  
         </div>
        <div class="form">
@@ -38,7 +38,7 @@
             </div>
         </div>
         
-        <button class= "float right" id="send-btn" style="position:relative; top:-40px;">Send <i class="send"></i></button>
+        <button class= "btn right" id="send-btn" style="">Send <i class="send"></i></button>
         
             
     </div>
