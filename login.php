@@ -1,11 +1,11 @@
-<?php include('include/connect.php'); ?>
+<?php include('include/config.php'); ?>
 
 <?php
 if(isset($_POST['submit'])) {
 
     $count = 0;
     $sql = "SELECT * FROM `users` WHERE Username='$_POST[username]' && Password='$_POST[password]';";
-    $result = mysqli_query($connect, $sql);     
+    $result = mysqli_query($conn, $sql);     
     $count = mysqli_num_rows($result);
 
     if($count==0) {
@@ -21,7 +21,7 @@ if(isset($_POST['submit'])) {
     else {
         ?>
         <script>
-            window.location('All Books.php');
+            window.location('index.php');
         </script>
         <?php
     }

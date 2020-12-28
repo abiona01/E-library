@@ -1,10 +1,10 @@
-<?php include('include/connect.php'); ?>
+<?php include('include/config.php'); ?>
 
 <?php
 if(isset($_POST['submit'])) {
     $count = 0;
     $sl = "SELECT username FROM users";
-    $result = mysqli_query($connect, $sl);
+    $result = mysqli_query($conn, $sl);
 
     while($row = mysqli_fetch_assoc($result)) {
         if($row['username']==$_POST['username']) {
@@ -15,8 +15,9 @@ if(isset($_POST['submit'])) {
     // $uName =  $_POST['username'];
     // $email =  $_POST['email'];
     
-    $uName = mysqli_real_escape_string($connect, $_POST['username']);
-    $email = mysqli_real_escape_string($connect, $_POST['email']);
+    $uName = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     
 
@@ -24,7 +25,7 @@ if(isset($_POST['submit'])) {
     $sql = "INSERT INTO users(Username, email) VALUES('$uName', '$email')";
     
     if($count==0) {
-        mysqli_query($connect, $sql); 
+        mysqli_query($conn, $sql); 
     }
     ?>
     <script>
@@ -33,13 +34,6 @@ if(isset($_POST['submit'])) {
     <?php 
 }
 
-else { 
-    ?>
-    <script>
-        alert('The username already exists.');
-    </script>
-    <?php
-}
 ?>
 
 <!DOCTYPE html>
@@ -78,9 +72,13 @@ else {
           <label for="email">Email <span>*<span></label>
         </div>
 
+        <div class="input-field col s12 m12 l12">
+        <i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" class="validate" placeholder=" Password" name="password" required>
+        </div>
 
         <div class="input-field col s12 m12 l12 center" style="margin-top: 10vh; margin-bottom: 10vh">
-        <input type="submit" class="btn info" name="submit">
+        <a href="./index.php"><input type="submit" class="btn info" name="submit"></a>
           <p id="login">Already have an Account with Sparky Library? <a href="./login.php">Login Here</a><p>
         </div>
 
