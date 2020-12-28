@@ -54,11 +54,11 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="home.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="box.php">Chat</a></li>
+            <li><a href="message.php">Request</a></li>
           </ul>
           <ul class="sidenav white" id="mobile-menu">
             <li><a href="index.php">Home</a></li>
@@ -72,7 +72,7 @@
       <div class="container">
         <form action="search.php" method="POST">
           <div class="input-field search">
-            <input id="data" type="text" name="search" placeholder="Search books">
+            <input id="data" type="text" name="search" placeholder="Search books" class="white-text">
             <!--<button id="submit-btn" type ="submit" class="right transparent"><i class="material-icons">search</i></button> -->
             <input type="submit" name="submit" value="Search">
           </div>
