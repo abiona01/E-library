@@ -1,3 +1,15 @@
+<?php 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +77,7 @@
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="request.php">Chat</a></li>
+            <li><a href="request.php">Request</a></li>
           </ul>
         </div>
       </nav>

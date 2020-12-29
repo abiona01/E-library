@@ -1,40 +1,6 @@
 <?php 
-session_start();
-
-// initializing variables
-$username = "";
-$email    = "";
-$errors = array(); 
-
-// connect to the database
-$db = mysqli_connect("remotemysql.com", "GUpZhDMMKw", "tGJ1mPizWn", "GUpZhDMMKw");
-if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
-
-  if (empty($username)) {
-  	array_push($errors, "Username is required");
-  }
-  if (empty($password)) {
-  	array_push($errors, "Password is required");
-  }
-
-  if (count($errors) == 0) {
-  	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');
-  	}else {
-  		array_push($errors, "Wrong username/password combination");
-  	}
-  }
-}
-
+include("server2.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +22,8 @@ if (isset($_POST['login_user'])) {
 </div>
 
 <div class="row">
-    <form class="col s12" action="index.php" method="POST">
+    <form class="col s12" action="login.php" method="POST">
+    <?php include('errors.php'); ?>
       <div class="row">
         <div class="input-field col s12 m12 l12">
             <i class="material-icons prefix ">account_circle</i>
@@ -75,7 +42,7 @@ if (isset($_POST['login_user'])) {
         </div>   -->
 
         <div class="input-field col s12 m12 l12 center">
-        <input type="submit" class="btn info" name="submit">
+        <input type="submit" class="btn info" name="login">
         </div>
 
 <div class="input-field col s12 m12 l12 grey center">
