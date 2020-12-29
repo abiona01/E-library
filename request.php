@@ -1,54 +1,41 @@
-<?php /*
-    $conn = mysqli_connect("localhost", "kakashi", "Success01", "e-library") or die("Database Error");
-    
-    $getMesg = mysqli_real_escape_string($conn, $_POST['text']);
-
-    $check_data = "SELECT replies FROM messages WHERE queries LIKE '%$getMesg%'";
-    $run_query = mysqli_query($conn, $check_data) or die("Error");
-
-
-    if(mysqli_num_rows($run_query) > 0){
-        $fetch_data = mysqli_fetch_assoc($run_query);
-        
-        $replay = $fetch_data['replies'];
-        echo $replay;
-    }else{
-        echo "Sorry don't understand";
-    } */
+<?php
 include("include/header.php");
 include("include/config.php");
-
+include("form.php");
 ?>
+
+<?php echo $alert; ?>
 
 <div class="container">
     <div class="container center">
-        <form action="form.php">
+        <form action="" method="post">
             <h3>Request A Book</h3>
             <div class="input-field">
                             <i class="material-icons prefix">contacts</i>
-                            <input type="text" class="contacts">
-                            <label for="Name" class="name">Your Name</label>
+                            <input type="text" class="contacts" name="name" placeholder="Your Name">
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">email</i>
-                            <input type="email" class="email">
-                            <label for="email" class="email">Your Email</label>
+                            <input type="email" class="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">book</i>
-                            <input type="text" class="title"></input>
-                            <label for="book title" class="book title">Book Title</label>
+                            <input type="text" class="title" name="title" placeholder="Book Title">
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">contacts</i>
-                            <input type="text" class="author"></input>
-                            <label for="book author" class="book author">Book Author</label>
+                            <input type="text" class="author" name="author" placeholder="Book Author">
                         </div>
-                        <button class="btn waves-effect waves-light blue-grey darken-1" type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light blue-grey darken-1" type="submit" name="submit">Request
                         </button>
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    if(window.history.replaceState){
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
 <?php
 include("include/footer.php");
 ?>

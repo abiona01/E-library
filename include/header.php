@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +40,31 @@
       .details{
         background-color: #fafafa;
         margin-bottom: 20px;
-      
+      }
+      .alert-success{
+        z-index: 1;
+        background: #D4EDDA;
+        font-size: 18px;
+        padding: 20px 40px;
+        min-width: 420px;
+        position: fixed;
+        right: 0;
+        top: 10px;
+        border-left: 8px solid #3AD66E;
+        border-radius: 4px;
+      }
+
+      .alert-error{
+        z-index: 1;
+        background: #FFF3CD;
+        font-size: 18px;
+        padding: 20px 40px;
+        min-width: 420px;
+        position: fixed;
+        right: 0;
+        top: 10px;
+        border-left: 8px solid #FFA502;
+        border-radius: 4px;
       }
     </style>
 </head>
@@ -65,7 +90,7 @@
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="request.php">Chat</a></li>
+            <li><a href="request.php">Request</a></li>
           </ul>
         </div>
       </nav>
