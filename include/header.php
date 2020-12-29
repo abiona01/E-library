@@ -58,14 +58,14 @@
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="message.php">Request</a></li>
+            <li><a href="request.php">Request</a></li>
           </ul>
           <ul class="sidenav white" id="mobile-menu">
             <li><a href="index.php">Home</a></li>
             <li><a href="all.php">All Books</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="box.php">Chat</a></li>
+            <li><a href="request.php">Chat</a></li>
           </ul>
         </div>
       </nav>
