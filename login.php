@@ -1,31 +1,38 @@
-<?php include('include/config.php'); ?>
+<?php 
+session_start();
 
-<?php
-if(isset($_POST['submit'])) {
+// initializing variables
+$username = "";
+$email    = "";
+$errors = array(); 
 
-    $count = 0;
-    $sql = "SELECT * FROM `users` WHERE Username='$_POST[username]' && Password='$_POST[password]';";
-    $result = mysqli_query($conn, $sql);     
-    $count = mysqli_num_rows($result);
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'e-library');
+if (isset($_POST['login_user'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
 
-    if($count==0) {
-        ?>
-        <script>
-            alert('The username and password does not match.');
-        </script>
-        <!-- <div class="alert alert-success">
-            <strong>The username and password does not match.</strong>
-        </div> -->
-        <?php
-    }
-    else {
-        ?>
-        <script>
-            window.location('index.php');
-        </script>
-        <?php
-    }
+  if (empty($username)) {
+  	array_push($errors, "Username is required");
+  }
+  if (empty($password)) {
+  	array_push($errors, "Password is required");
+  }
+
+  if (count($errors) == 0) {
+  	$password = md5($password);
+  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$results = mysqli_query($db, $query);
+  	if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['username'] = $username;
+  	  $_SESSION['success'] = "You are now logged in";
+  	  header('location: index.php');
+  	}else {
+  		array_push($errors, "Wrong username/password combination");
+  	}
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +56,7 @@ if(isset($_POST['submit'])) {
 </div>
 
 <div class="row">
-    <form class="col s12" action="" method="POST">
+    <form class="col s12" action="index.php" method="POST">
       <div class="row">
         <div class="input-field col s12 m12 l12">
             <i class="material-icons prefix ">account_circle</i>

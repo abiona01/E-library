@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 
 $conn = mysqli_connect("localhost", "kakashi", "Success01", "e-library");

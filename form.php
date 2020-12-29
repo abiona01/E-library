@@ -1,6 +1,6 @@
 
 <?php
-$mail = new PHPMailer();
+/*$mail = new PHPMailer();
 $mail = new PHPMailer();
 // configure an SMTP
 $mail->isSMTP();
@@ -9,7 +9,7 @@ $mail->SMTPAuth = true;
 $mail->Username = '11c731ac4d4babe';
 $mail->Password = '18d0fa0fe09d4ef';
 $mail->SMTPSecure = 'tls';
-$mail->Port = 2525;
+$mail->Port = 2525; */
 
 $errors = [];
 $errorMessage = '';
