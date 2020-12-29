@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
 
 <div id="error"></div>
     <form id="form" class="col s12 m12 l12" action="index.php" method="POST">
-    <?php include('error.php'); ?>
+    <?php include('include/error.php'); ?>
       <div class="row">
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix ">account_circle</i>
