@@ -1,5 +1,5 @@
 <?php 
-include("server2.php");
+require_once "server2.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

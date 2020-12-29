@@ -25,11 +25,11 @@ if(isset($_POST['submit'])){
        $mail->pORT = '587';
 
        $mail->setfrom('quadratwemimo@gmail.com');
-       $mail->addAddress('quadratwemimo@gmail.com, ayomideolaniran@gmail.com');
+       $mail->addAddress('quadratwemimo@gmail.com');
 
        $mail->isHTML(true);
        $mail->Subject = 'Message Received (Book Request)';
-       $mail->Body = '<h3>Name: $name <br>Email: $email <br>Title: $title <br>Author: $author</h3>';
+       $mail->Body = "<h3>Name: $name <br>Email: $email <br>Title: $title <br>Author: $author</h3>";
 
        $mail->send();
        $alert = '<div class="alert-success">
