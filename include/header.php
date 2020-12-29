@@ -69,6 +69,26 @@
           </ul>
         </div>
       </nav>
+    <div class="content">
+  <!-- notification message -->
+  <?php if (isset($_SESSION['success'])) : ?>
+  <div class="error success" >
+      <h3>
+      <?php 
+          echo $_SESSION['success']; 
+          unset($_SESSION['success']);
+      ?>
+      </h3>
+  </div>
+  <?php endif ?>
+
+<!-- logged in user information -->
+<?php  if (isset($_SESSION['username'])) : ?>
+    <div>
+    <p class="white-text"> <i class="material-icons white-text">account_circle</i><strong><?php echo $_SESSION['username']; ?></strong></p>
+    </div>
+   <p> <a  class="btn transparent" href="index.php?logout='1'" style="color: red;">logout</a> </p>
+<?php endif ?>
       <div class="container">
         <form action="search.php" method="POST">
           <div class="input-field search">
@@ -78,6 +98,8 @@
           </div>
         </form>
     </div> 
+    
+    </div>
     </header>
       <!-- Compiled and minified JavaScript -->
 

@@ -26,7 +26,7 @@ include('include/config.php');
             //here goes the data ?>
                 <div class="row white-text">
                     <div class="col s12 l6">
-                        <i class="tiny material-icons prefix" style="top:10px">book</i>
+                        <i class="tiny material-icons black-text" style="top:10px">book</i>
                         <a href="<?php echo $row["link"];?>">
                         <h5 class="black-text"><?php echo $row["title"];?> - <?php echo $row["author"];?> </h5> </a>
                     </div>

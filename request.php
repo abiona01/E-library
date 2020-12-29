@@ -22,7 +22,7 @@ include("include/config.php");
 
 <div class="container">
     <div class="container center">
-        <form action="">
+        <form action="form.php">
             <h3>Request A Book</h3>
             <div class="input-field">
                             <i class="material-icons prefix">contacts</i>

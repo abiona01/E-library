@@ -1,38 +1,59 @@
-<?php include('include/config.php'); ?>
+<?php 
+session_start();
 
-<?php
-if(isset($_POST['submit'])) {
-    $count = 0;
-    $sl = "SELECT username FROM users";
-    $result = mysqli_query($conn, $sl);
+// initializing variables
+$username = "";
+$email    = "";
+$errors = array(); 
 
-    while($row = mysqli_fetch_assoc($result)) {
-        if($row['username']==$_POST['username']) {
-            $count=$count+1;
-        }
-    } 
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'e-library');
+
+if (isset($_POST['submit'])) {
+  // receive all input values from the form
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password1 = mysqli_real_escape_string($db, $_POST['password1']);
+  $password2 = mysqli_real_escape_string($db, $_POST['password2']);
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($username)) { array_push($errors, "Username is required"); }
+  if (empty($email)) { array_push($errors, "Email is required"); }
+  if (empty($password1)) { array_push($errors, "Password is required"); }
+  if ($password1 != $password2) {
+	array_push($errors, "The two passwords do not match");
+  }
+
+  // first check the database to make sure 
+  // a user does not already exist with the same username and/or email
+  $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+  $result = mysqli_query($db, $user_check_query);
+  $user = mysqli_fetch_assoc($result);
   
-    // $uName =  $_POST['username'];
-    // $email =  $_POST['email'];
-    
-    $uName = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    
-
-    // $sql = "INSERT INTO `users` VALUES('$_POST[username]', '$_POST[email]')";
-    $sql = "INSERT INTO users(Username, email) VALUES('$uName', '$email')";
-    
-    if($count==0) {
-        mysqli_query($conn, $sql); 
+  if ($user) { // if user exists
+    if ($user['username'] === $username) {
+      array_push($errors, "Username already exists");
     }
-    ?>
-    <script>
-        alert('Registration Successful.');
-    </script>
-    <?php 
+
+    if ($user['email'] === $email) {
+      array_push($errors, "email already exists");
+    }
+  }
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+  	$password = md5($password_1);//encrypt the password before saving in the database
+
+  	$query = "INSERT INTO users (username, email, password) 
+  			  VALUES('$username', '$email', '$password')";
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "You are now logged in";
+  	header('location: index.php');
+  }
 }
+
 
 ?>
 
@@ -58,27 +79,32 @@ if(isset($_POST['submit'])) {
 <br>
 
 <div id="error"></div>
-    <form id="form" class="col s12 m12 l12" action="" method="POST">
+    <form id="form" class="col s12 m12 l12" action="index.php" method="POST">
+    <?php include('error.php'); ?>
       <div class="row">
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix ">account_circle</i>
-          <input id="full_name" type="text" class="validate autocomplete" placeholder="Username" name="username" required>
+          <input id="full_name" type="text" class="validate autocomplete" placeholder="Username" name="username" required value="<?php echo $username; ?>">
           <label for="full_name">Username<span>*<span></label>
         </div>
 
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix ">mail</i>
-          <input id="email" type="email" class="validate autocomplete" placeholder="Email" name="email" required>
+          <input id="email" type="email" class="validate autocomplete" placeholder="Email" name="email" value="<?php echo $email; ?>">
           <label for="email">Email <span>*<span></label>
         </div>
 
         <div class="input-field col s12 m12 l12">
         <i class="material-icons prefix">vpn_key</i>
-          <input id="password" type="password" class="validate" placeholder=" Password" name="password" required>
+          <input id="password" type="password" class="validate" placeholder=" Password" name="password1" required>
+        </div>
+        <div class="input-field col s12 m12 l12">
+        <i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" class="validate" placeholder="Confirm Password" name="password2" required>
         </div>
 
         <div class="input-field col s12 m12 l12 center" style="margin-top: 10vh; margin-bottom: 10vh">
-        <a href="./index.php"><input type="submit" class="btn info" name="submit"></a>
+        <input type="submit" class="btn info" name="submit">
           <p id="login">Already have an Account with Sparky Library? <a href="./login.php">Login Here</a><p>
         </div>
 
